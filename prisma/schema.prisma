@@ -13,29 +13,29 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
+model User {
   id String @id @default(cuid())
   email String @unique
-  userName String @unique
+  username String @unique
   clerkId String @unique
   name String?
   bio String?
+  image String?
   location String?
   website String?
   createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
-  //relations
+  // Relations:
   posts Post[]
   comments Comment[]
   likes Like[]
 
+  followers Follows[] @relation("following")
+  following Follows[] @relation("follower")
 
-  followers Follow[] @relation("following")
-  following Follows[] @relation("follwers")
-
-  notificationsCreated Notification[] @relation("userNotifications")
-  notifications Notification[] @relation("notificationsCreator")
+  notifications Notification[] @relation("userNotifications")
+  notificationsCreated Notification[] @relation("notificationCreator")
 }
 
 
@@ -54,6 +54,7 @@ model Post{
   notifications Notification[]
 }
 
+
 model Comment{
   id String @id @default(cuid())
   content String
@@ -68,7 +69,6 @@ model Comment{
 
   @@index([authorId,postId])
 }
-
 
 model Like {
   id        String   @id @default(cuid())
