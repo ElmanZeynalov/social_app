@@ -38,7 +38,7 @@ function MobileNavbar() {
 					</SheetHeader>
 					<nav className="flex flex-col space-y-4 mt-6">
 						<Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
-							<Link href="/">
+							<Link href="/public">
 								<HomeIcon className="w-4 h-4" />
 								Home
 							</Link>

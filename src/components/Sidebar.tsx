@@ -1,25 +1,25 @@
-import React from 'react';
 import { currentUser } from '@clerk/nextjs/server';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { SignInButton, SignUpButton } from '@clerk/nextjs';
-import { Button } from '@/components/ui/button';
-import { getUserByClerkId } from '@/actions/user.action';
+import { Button } from './ui/button';
+
 import Link from 'next/link';
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { Separator } from '@/components/ui/separator';
+import { Avatar, AvatarImage } from './ui/avatar';
+import { Separator } from './ui/separator';
 import { LinkIcon, MapPinIcon } from 'lucide-react';
+import { getUserByClerkId } from '@/actions/user.action';
 
 async function Sidebar() {
 	const authUser = await currentUser();
-	if (!authUser) {
-		return <UnAuthenticatedSidebar />;
-	}
+	// console.log('side bar', { authUser });
 
-	const user = await getUserByClerkId(authUser.id);
+	if (!authUser) return <UnAuthenticatedSidebar />;
+	// console.log('Authenticated', authUser);
+	const user = await getUserByClerkId(authUser?.id);
+	// console.log({ user });
 	if (!user) {
 		return null;
 	}
-	console.log(user);
 	return (
 		<div className="sticky top-20">
 			<Card>
