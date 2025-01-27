@@ -110,7 +110,7 @@ export async function toggleLike(postId: string) {
 				},
 			});
 		} else {
-			// like and create notification
+			// like and create notifications
 			await prisma.$transaction([
 				prisma.like.create({
 					data: {
@@ -155,7 +155,7 @@ export async function createComment(postId: string, content: string) {
 
 		if (!post) throw new Error('Post not found');
 
-		// Create comment and notification
+		// Create comment and notifications
 		const [comment] = await prisma.$transaction(async (tx) => {
 			// Create comment
 			const newComment = await tx.comment.create({
@@ -166,7 +166,7 @@ export async function createComment(postId: string, content: string) {
 				},
 			});
 
-			// Create notification
+			// Create notifications
 			if (post.authorId !== userId) {
 				await tx.notification.create({
 					data: {

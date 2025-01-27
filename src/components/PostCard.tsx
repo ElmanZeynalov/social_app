@@ -31,7 +31,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
 		try {
 			setIsLiking(true);
 			setHasLiked((prevLike) => !prevLike);
-			setLikes((prevLike) => prevLike + (hasLiked ? 1 : -1));
+			setLikes((prevLike) => prevLike + (hasLiked ? +1 : -1));
 			await toggleLike(post.id);
 		} catch (error) {
 			setLikes(post._count.likes);
