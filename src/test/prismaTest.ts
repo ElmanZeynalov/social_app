@@ -16,5 +16,3 @@ async function testPrisma() {
 		return 'Prisma test failed.';
 	}
 }
-
-// testPrisma();
