@@ -24,7 +24,6 @@ function CreatPost() {
 
 		try {
 			const result: any = await creatPost(content, imageUrl);
-			// console.log('resulltktkkdksklv', result);
 
 			if (result.success) {
 				setContent('');
@@ -64,7 +63,6 @@ function CreatPost() {
 								onChange={(url) => {
 									setImageUrl(url);
 									if (!url) setShowImageUpload(false);
-									// console.log(imageUrl);
 								}}
 							/>
 						</div>

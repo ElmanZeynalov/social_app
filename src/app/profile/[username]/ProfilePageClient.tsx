@@ -111,7 +111,7 @@ function ProfilePageClient({
 									</div>
 								</div>
 
-								{/* "FOLLOW & EDIT PROFILE" BUTTONS */}
+								{/* "FOLLOW & EDIT PROFILE" BUTTON */}
 								{!currentUser ? (
 									<SignInButton mode="modal">
 										<Button className="w-full mt-4">Follow</Button>

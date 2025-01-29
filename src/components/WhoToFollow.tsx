@@ -6,12 +6,9 @@ import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import FollowButton from '@/components/FollowButton';
 
 async function WhoToFollow() {
-	// const userId = await currentUser();
 	const users = await getRandomUsers();
-
 	if (users.length === 0) return null;
 
-	// console.log('user', { users });
 	return (
 		<Card>
 			<CardHeader>

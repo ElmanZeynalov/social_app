@@ -5,7 +5,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 export function NotificationsSkeleton() {
 	// array 5 items
 	const skeletonItems = Array.from({ length: 5 }, (_, i) => i);
-
 	return (
 		<div className="space-y-4">
 			<Card>
