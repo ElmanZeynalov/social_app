@@ -15,12 +15,14 @@ async function Navbar() {
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center">
 						{user === null ? (
-							<Link href="/public" className="text-xl font-bold text-primary font-mono tracking-wider">
+							<Link href="/" className="text-xl font-bold text-primary font-mono tracking-wider">
 								Social App
 							</Link>
 						) : (
-							<Link href="/public" className="text-xl font-bold text-primary font-mono tracking-wider">
-								{`${user.firstName?.toUpperCase()} ${user.lastName?.toUpperCase()}`}
+							<Link href="/" className="text-xl font-bold text-primary font-mono tracking-wider">
+								{user.firstName || user.lastName
+									? `${user.firstName?.toUpperCase()} ${user.lastName?.toUpperCase()}`
+									: 'Social App'}
 							</Link>
 						)}
 					</div>
