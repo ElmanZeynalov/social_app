@@ -31,7 +31,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
 		try {
 			setIsLiking(true);
 			setHasLiked((prevLike) => !prevLike);
-			setLikes((prevLike) => prevLike + (hasLiked ? +1 : -1));
+			setLikes((prevLike) => prevLike + (hasLiked ? -1 : +1));
 			await toggleLike(post.id);
 		} catch (error) {
 			setLikes(post._count.likes);
@@ -118,7 +118,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
 								variant="ghost"
 								size="sm"
 								className={`text-muted-foreground gap-2 ${
-									hasLiked ? 'text-red-500 hover:text-red-600' : 'hover:text-red-500'
+									hasLiked ? 'text-red-500 hover:text-red-900' : 'hover:text-red-500'
 								}`}
 								onClick={handleLike}
 							>
