@@ -2,8 +2,12 @@ import { getProfileByUsername, getUserLikedPosts, getUserPosts, isFollowing } fr
 import { notFound } from 'next/navigation';
 import ProfilePageClient from './ProfilePageClient';
 
-export async function generateMetadata({ params }: { params: Promise<{ username: string }> }) {
-	const { username } = await params;
+export async function generateMetadata({ params }: { params: { username: string } }) {
+	const username = await params.username;
+
+	// params -> Promose -> { resolved: false }
+	// params.userName -> undefined
+
 	const user = await getProfileByUsername(username);
 	if (!user) return null;
 

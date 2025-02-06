@@ -20,7 +20,7 @@ async function Navbar() {
 							</Link>
 						) : (
 							<Link href="/" className="text-xl font-bold text-primary font-mono tracking-wider">
-								{user.firstName || user.lastName
+								{user.firstName && user.lastName
 									? `${user.firstName?.toUpperCase()} ${user.lastName?.toUpperCase()}`
 									: 'Social App'}
 							</Link>

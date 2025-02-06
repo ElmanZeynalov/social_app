@@ -12,16 +12,20 @@ import { DeleteAlertDialog } from './DeleteAlertDialog';
 import { Button } from './ui/button';
 import { HeartIcon, LogInIcon, MessageCircleIcon, SendIcon } from 'lucide-react';
 import { Textarea } from './ui/textarea';
+import { useAllData } from '@/app/api/getAllData/useAllData';
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
 type Post = Posts[number];
 
 function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
+	// const { data, error, isLoading } = useAllData();
+	// console.log(data);
 	const { user } = useUser();
 	const [newComment, setNewComment] = useState('');
 	const [isCommenting, setIsCommenting] = useState(false);
 	const [isLiking, setIsLiking] = useState(false);
 	const [isDeleting, setIsDeleting] = useState(false);
+	// TODO: We don't need load all users in post, we can get them from BE as a count
 	const [hasLiked, setHasLiked] = useState(post.likes.some((like) => like.userId === dbUserId));
 	const [likes, setLikes] = useState(post._count.likes);
 	const [showComments, setShowComments] = useState(false);
@@ -30,6 +34,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
 		if (isLiking) return;
 		try {
 			setIsLiking(true);
+			// TODO: Refactor this part especially improve state structure
 			setHasLiked((prevLike) => !prevLike);
 			setLikes((prevLike) => prevLike + (hasLiked ? -1 : +1));
 			await toggleLike(post.id);

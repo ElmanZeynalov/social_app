@@ -4,6 +4,8 @@ import WhoToFollow from '@/components/WhoToFollow';
 import { getPosts } from '@/actions/post.action';
 import PostCard from '@/components/PostCard';
 import { getDbUserId } from '@/actions/user.action';
+import { useQuery } from '@tanstack/react-query';
+import { prisma } from '@/lib/prisma';
 
 export default async function Home() {
 	const user = await currentUser();
