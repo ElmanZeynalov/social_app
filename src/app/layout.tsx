@@ -8,7 +8,7 @@ import Sidebar from '@/components/Sidebar';
 import { Toaster } from 'react-hot-toast';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import Providers from '@/app/Providers';
+import QueryClientProviders from '@/providers/query-client/QueryClientProviders';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -33,7 +33,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<Providers>
+				<QueryClientProviders>
 					<div className="min-h-screen">
 						<Navbar />
 						<main className="py-8">
@@ -47,7 +47,7 @@ export default function RootLayout({
 							</div>
 						</main>
 					</div>
-				</Providers>
+				</QueryClientProviders>
 			</body>
 		</html>
 	);

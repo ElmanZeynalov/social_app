@@ -1,10 +1,11 @@
 import React from 'react';
-import { Loader } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
 function Loading() {
 	return (
 		<div>
-			<Loader />
 			LOADING........
+			<br />
+			<Progress />
 		</div>
 	);
 }

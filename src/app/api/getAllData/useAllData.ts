@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { Author } from '@/app/api/getAllData/type';
-import { Like, Post } from '@prisma/client';
+import { Like, Post, Comment, Notification, User, Follows } from '@prisma/client';
 
 interface ApiResponse {
 	users: Author[];
@@ -11,7 +11,7 @@ interface ApiResponse {
 }
 
 const fetchAllData = async (): Promise<ApiResponse> => {
-	const response = await fetch('/api/getAllData'); // API'yi çağır
+	const response = await fetch('/api/getAllData');
 	if (!response.ok) throw new Error('Failed to fetch data');
 	return response.json();
 };

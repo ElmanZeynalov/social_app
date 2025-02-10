@@ -5,9 +5,6 @@ import ProfilePageClient from './ProfilePageClient';
 export async function generateMetadata({ params }: { params: { username: string } }) {
 	const username = await params.username;
 
-	// params -> Promose -> { resolved: false }
-	// params.userName -> undefined
-
 	const user = await getProfileByUsername(username);
 	if (!user) return null;
 
