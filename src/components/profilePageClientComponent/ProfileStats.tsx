@@ -9,7 +9,6 @@ interface ProfileStats {
 }
 
 function ProfileStats({ user }: { user: ProfileStats }) {
-	// const { user } = useUser();
 	return (
 		<div className="w-full mt-6">
 			<div className="flex justify-between mb-4">

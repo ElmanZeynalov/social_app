@@ -1,10 +1,7 @@
 'use client';
-
 import { getProfileByUsername, getUserPosts } from '@/actions/profile.action';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
-
 import { Card, CardContent } from '@/components/ui/card';
-
 import ProfileStats from '@/components/profilePageClientComponent/ProfileStats';
 import EditProfileButton from '@/components/profilePageClientComponent/EditProfileButton';
 import LocationWebsite from '@/components/profilePageClientComponent/LocationWebsite';

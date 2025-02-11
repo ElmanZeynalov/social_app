@@ -4,7 +4,7 @@ import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/sideBar/Sidebar';
 import { Toaster } from 'react-hot-toast';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
