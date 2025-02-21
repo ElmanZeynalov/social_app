@@ -22,3 +22,4 @@ export const useAllData = () => {
 		queryFn: fetchAllData,
 	});
 };
+console.log(fetchAllData());

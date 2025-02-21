@@ -7,12 +7,13 @@ import { currentUser } from '@clerk/nextjs/server';
 
 async function DesktopNavbar() {
 	const user = await currentUser();
+	// console.log('user', user);
 
 	return (
 		<div className="hidden md:flex items-center space-x-4">
 			<ModeToggle />
 			<Button variant="ghost" className="flex items-center gap-2" asChild>
-				<Link href="/">
+				<Link href="/public">
 					<HomeIcon className="w-4 h-4" />
 					<span className="hidden lg:inline">Home</span>
 				</Link>

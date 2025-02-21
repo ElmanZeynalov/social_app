@@ -1,8 +1,8 @@
 import { currentUser } from '@clerk/nextjs/server';
-import CreatPost from '@/components/CreatPost';
-import WhoToFollow from '@/components/WhoToFollow';
+import CreatPost from '@/components/posts/CreatPost';
+import WhoToFollow from '@/components/sideBar/WhoToFollow';
 import { getPosts } from '@/actions/post.action';
-import PostCard from '@/components/PostCard';
+import PostCard from '@/components/posts/PostCard';
 import { getDbUserId } from '@/actions/user.action';
 import { useQuery } from '@tanstack/react-query';
 import { prisma } from '@/lib/prisma';

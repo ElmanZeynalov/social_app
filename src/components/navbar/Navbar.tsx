@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import DesktopNavbar from '@/components/DesktopNavbar';
-import MobileNavbar from '@/components/MobileNavbar';
+import DesktopNavbar from '@/components/navbar/DesktopNavbar';
+import MobileNavbar from '@/components/navbar/MobileNavbar';
 import { currentUser } from '@clerk/nextjs/server';
 import { syncUser } from '@/actions/user.action';
 
@@ -15,11 +15,11 @@ async function Navbar() {
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center">
 						{user === null ? (
-							<Link href="/" className="text-xl font-bold text-primary font-mono tracking-wider">
+							<Link href="/public" className="text-xl font-bold text-primary font-mono tracking-wider">
 								Social App
 							</Link>
 						) : (
-							<Link href="/" className="text-xl font-bold text-primary font-mono tracking-wider">
+							<Link href="/public" className="text-xl font-bold text-primary font-mono tracking-wider">
 								{user.firstName && user.lastName
 									? `${user.firstName?.toUpperCase()} ${user.lastName?.toUpperCase()}`
 									: 'Social App'}

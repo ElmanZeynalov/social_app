@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { FileTextIcon, HeartIcon } from 'lucide-react';
-import PostCard from '@/components/PostCard';
+import PostCard from '@/components/posts/PostCard';
 
 function MyLikePosts({ user, posts, likedPosts }: { user: any; posts: any[]; likedPosts: any[] }) {
 	return (

@@ -3,12 +3,13 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from 'next-themes';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/navbar/Navbar';
 import Sidebar from '@/components/sideBar/Sidebar';
 import { Toaster } from 'react-hot-toast';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import QueryClientProviders from '@/providers/query-client/QueryClientProviders';
+import { getProfileByUsername } from '@/actions/profile.action';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',

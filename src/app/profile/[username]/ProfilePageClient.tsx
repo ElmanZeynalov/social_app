@@ -2,10 +2,10 @@
 import { getProfileByUsername, getUserPosts } from '@/actions/profile.action';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
-import ProfileStats from '@/components/profilePageClientComponent/ProfileStats';
-import EditProfileButton from '@/components/profilePageClientComponent/EditProfileButton';
-import LocationWebsite from '@/components/profilePageClientComponent/LocationWebsite';
-import MyLikePosts from '@/components/profilePageClientComponent/MyLikePosts';
+import ProfileStats from '@/components/profile/ProfileStats';
+import EditProfileButton from '@/components/profile/EditProfileButton';
+import LocationWebsite from '@/components/profile/LocationWebsite';
+import MyLikePosts from '@/components/profile/MyLikePosts';
 
 type User = Awaited<ReturnType<typeof getProfileByUsername>>;
 type Posts = Awaited<ReturnType<typeof getUserPosts>>;

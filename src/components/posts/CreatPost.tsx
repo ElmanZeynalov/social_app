@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { ImageIcon, Loader2Icon, SendIcon } from 'lucide-react';
 import { creatPost } from '@/actions/post.action';
 import toast from 'react-hot-toast';
-import ImageUpload from '@/components/ImageUpload';
+import ImageUpload from '@/components/profile/ImageUpload';
 
 function CreatPost() {
 	const { user } = useUser();
