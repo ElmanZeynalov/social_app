@@ -13,13 +13,13 @@ export function WhoFollower({ followersUsers, user }: any) {
 			</HoverCardTrigger>
 			<HoverCardContent className="w-auto">
 				<div className="flex justify-between space-x-4">
-					{/*<div className="space-y-1">*/}
-					{followersUsers.map((userName: any) => (
-						<p className="text-sm" key={userName.id}>
-							{userName.name}
-						</p>
-					))}
-					{/*</div>*/}
+					<div className="space-y-1">
+						{followersUsers.map((userName: any) => (
+							<p className="text-sm block" key={userName.id}>
+								{userName.name}
+							</p>
+						))}
+					</div>
 				</div>
 			</HoverCardContent>
 		</HoverCard>

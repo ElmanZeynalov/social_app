@@ -15,7 +15,9 @@ export function WhoFollowing({ followingUsers, user }: any) {
 				<div className="flex justify-between space-x-4">
 					<div className="space-y-1">
 						{followingUsers.map((userName: any) => (
-							<p className="text-sm">{userName.name}</p>
+							<p className="text-sm" key={userName.id}>
+								{userName.name}
+							</p>
 						))}
 					</div>
 				</div>

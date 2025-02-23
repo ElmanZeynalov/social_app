@@ -14,8 +14,6 @@ function ProfileStats({ user, followingUsers, followersUsers }: ProfileStatsProp
 				<Separator orientation="vertical" />
 				<div>
 					<WhoFollower followersUsers={followersUsers} user={user} />
-					{/*<div className="font-semibold">{user._count.followers.toLocaleString()}</div>*/}
-					{/*<div className="text-sm text-muted-foreground">Followers</div>*/}
 				</div>
 				<Separator orientation="vertical" />
 				<div>
