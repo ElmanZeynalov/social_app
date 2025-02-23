@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { formatDistanceToNow } from 'date-fns';
-import { DeleteAlertDialog } from '@/components/posts/DeleteAlertDialog';
+import { DeleteAlertDialog } from '@/feature/post/DeleteAlertDialog';
 import { deletePost, getPosts } from '@/actions/post.action';
 import toast from 'react-hot-toast';
 

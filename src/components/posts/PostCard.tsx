@@ -8,13 +8,13 @@ import { Card, CardContent } from '../ui/card';
 import Link from 'next/link';
 import { Avatar, AvatarImage } from '../ui/avatar';
 import { formatDistanceToNow } from 'date-fns';
-import { DeleteAlertDialog } from './DeleteAlertDialog';
+import { DeleteAlertDialog } from '../../feature/post/DeleteAlertDialog';
 import { Button } from '../ui/button';
 import { HeartIcon, LogInIcon, MessageCircleIcon, SendIcon } from 'lucide-react';
 import { Textarea } from '../ui/textarea';
 import { useAllData } from '@/app/api/getAllData/useAllData';
 import PostHeaderTextContent from '@/components/posts/PostHeaderTextContent';
-import PostImage from '@/components/posts/PostImage';
+import PostImage from '@/feature/post/PostImage';
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
 type Post = Posts[number];

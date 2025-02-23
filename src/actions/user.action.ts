@@ -7,15 +7,13 @@ import { revalidatePath } from 'next/cache';
 export async function syncUser() {
 	try {
 		const { userId } = await auth();
-		// console.log({ userId });
+
 		const user = await currentUser();
-		// console.log({ user });
+
 		if (!user) {
 			console.log('No user is currently logged in.');
 			return;
 		}
-		// console.log('Auth User ID:', { userId });
-		// console.log('Current User:', { user });
 
 		if (!userId || !user) return;
 
@@ -64,7 +62,7 @@ export async function getDbUserId() {
 	if (!clerkId) return null;
 
 	const user = await getUserByClerkId(clerkId);
-	// console.log({ user });
+
 	if (!user) throw new Error('User not found');
 
 	return user.id;

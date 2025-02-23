@@ -3,7 +3,7 @@ import { getRandomUsers } from '@/actions/user.action';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import FollowButton from '@/components/profile/FollowButton';
+import FollowButton from '@/feature/profile/FollowButton';
 
 async function WhoToFollow() {
 	const users = await getRandomUsers();

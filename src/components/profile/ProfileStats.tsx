@@ -1,25 +1,21 @@
 import React from 'react';
+import { ProfileStatsProps } from '@/types/profile/profile.type';
 import { Separator } from '@/components/ui/separator';
-import { getProfileByUsername } from '@/actions/profile.action';
+import { WhoFollowing } from '@/components/profile/WhoFollowing';
+import { WhoFollower } from '@/components/profile/WhoFollower';
 
-type User = Awaited<ReturnType<typeof getProfileByUsername>>;
-
-interface ProfileStats {
-	user: NonNullable<User>;
-}
-
-function ProfileStats({ user }: { user: ProfileStats }) {
+function ProfileStats({ user, followingUsers, followersUsers }: ProfileStatsProps) {
 	return (
 		<div className="w-full mt-6">
 			<div className="flex justify-between mb-4">
 				<div>
-					<div className="font-semibold">{user._count.following.toLocaleString()}</div>
-					<div className="text-sm text-muted-foreground">Following</div>
+					<WhoFollowing followingUsers={followingUsers} user={user} />
 				</div>
 				<Separator orientation="vertical" />
 				<div>
-					<div className="font-semibold">{user._count.followers.toLocaleString()}</div>
-					<div className="text-sm text-muted-foreground">Followers</div>
+					<WhoFollower followersUsers={followersUsers} user={user} />
+					{/*<div className="font-semibold">{user._count.followers.toLocaleString()}</div>*/}
+					{/*<div className="text-sm text-muted-foreground">Followers</div>*/}
 				</div>
 				<Separator orientation="vertical" />
 				<div>
